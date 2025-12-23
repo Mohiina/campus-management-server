@@ -13,9 +13,12 @@ export default function EditStudent() {
     email: '',
     gpa: '',
     imageUrl: '',
+    campusId: '',
   });
 
   const [error, setError] = useState('');
+  const [campuses, setCampuses] = useState([]);
+
 
   useEffect(() => {
     axios.get(`http://localhost:3001/api/students/${studentId}`)
@@ -25,6 +28,12 @@ export default function EditStudent() {
         setError('Failed to load student data.');
       });
   }, [studentId]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/api/campuses')
+      .then(res => setCampuses(res.data))
+      .catch(err => console.error(err));
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -74,6 +83,22 @@ export default function EditStudent() {
           <label>Image URL: </label>
           <input name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
         </div>
+        <div>
+          <label>Campus: </label>
+          <select
+            name="campusId"
+            value={formData.campusId || ''}
+            onChange={handleChange}
+          >
+            <option value="">Not Enrolled</option>
+            {campuses.map(campus => (
+              <option key={campus.id} value={campus.id}>
+                {campus.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <button type="submit">Update Student</button>
       </form>
     </div>
