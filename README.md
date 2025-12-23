@@ -50,7 +50,95 @@ The frontend provides a user interface for managing campuses and students. It is
 
 ---
 
+
+
+## Getting Started (Local Setup)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Mohiina/campus-management-server.git
+cd campus-management-server
+```
+
+---
+
+## Start the Backend Server
+
+1. Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+2. Install backend dependencies:
+
+```bash
+npm install
+```
+
+3. Start the backend server:
+
+```bash
+npm start
+```
+
+The backend API will run at:
+
+```
+http://localhost:3001
+```
+
+
+---
+
+## Start the Frontend Application
+
+1. Open a **new terminal window/tab**
+
+2. Navigate to the frontend folder:
+
+```bash
+cd frontend
+```
+
+3. Install frontend dependencies:
+
+```bash
+npm install
+```
+
+4. Start the frontend application:
+
+```bash
+npm start
+```
+
+The frontend will run at:
+
+```
+http://localhost:3000
+```
+
+---
+
+## Running the Full Application
+
+* Backend must be running **first**
+* Frontend communicates with the backend API at `localhost:3001`
+* Access the app in your browser at:
+
+```
+http://localhost:3000
+```
+
+---
+
+
+
+
 ## Contributors
 - Name: Mokhinabonu Ubaydulloeva
 - Email: Mokhinabonu.ubaydulloeva43@myhunter.cuny.edu
 - GitHub: [Mohiina](https://github.com/Mohiina)
+  
